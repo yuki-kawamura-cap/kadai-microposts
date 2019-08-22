@@ -11,16 +11,16 @@ class User < ApplicationRecord
     has_many :favorites_posts, through: :favorites, source: :micropost
     
     def like(micropost)
-    favorites.find_or_create_by(micropost_id: micropost.id)
+        favorites.find_or_create_by(micropost_id: micropost.id)
     end
 
     def unlike(micropost)
-    favorite = favorites.find_by(micropost_id: micropost.id)
-    favorite.destroy if favorite
+        favorite = favorites.find_by(micropost_id: micropost.id)
+        favorite.destroy if favorite
     end
     
     def  favorites_post?(micropost)
-    self.favorites_posts.include?(micropost)
+        self.favorites_posts.include?(micropost)
     end
     
 end
