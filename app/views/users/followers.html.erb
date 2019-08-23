@@ -25,7 +25,6 @@
 ">Microposts  <span class="badge badge-secondary">
 <%= @count_microposts %>
 </span></a></li>
-
       <li class="nav-item"><a href="
 <%= followings_user_path(@user) %>
 " class="nav-link 
@@ -42,8 +41,7 @@
 <%= @count_followers %>
 </span></a></li>
 
-
-      <li class="nav-item"><a href="
+        <li class="nav-item"><a href="
 <%= likes_user_path(@user) %>
 " class="nav-link 
 <%= 'active' if current_page?(likes_user_path(@user)) %>
@@ -53,7 +51,7 @@
 
     </ul>
     
-<%= render 'microposts/microposts', microposts: @favorites_posts %>
+<%= render 'users', users: @followers %>
 
   </div>
 </div>
