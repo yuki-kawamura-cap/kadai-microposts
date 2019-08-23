@@ -1,0 +1,13 @@
+<h1>お気に入り一覧</h1>
+
+<ul>
+  
+    <% @favorites_posts.each do |favorite_post| %>
+    
+        <li><%= link_to fovorites_posts.id, favorites_post %> : <%= favorites_post.content %></li>
+      
+    <% end %>
+
+</ul>
+
+<%= link_to 'My profile', user_path %>
